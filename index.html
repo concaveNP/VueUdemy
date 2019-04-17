@@ -10,21 +10,22 @@
 <body>
     <div id="app">
         <input type="text" v-on:input="changeGreeting"></input>
-        <p>{{ sayHello() }}</p>
+        <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
     </div>
     <script>
         // You may of course also outsource this script code into a separate file (e.g. app.js) and simply import this file here
         new Vue({
             el: '#app',
             data: {
-                greeting: 'Hello World!'
+                title: 'Hello World!',
+                link: 'http://google.com'
             },
             methods: {
                 changeGreeting: function(event) {
-                    this.greeting = event.target.value;
+                    this.title = event.target.value;
                 },
                 sayHello: function() {
-                    return "Hello Dave (awesome)";
+                    return this.title;
                 }
             }
         })
