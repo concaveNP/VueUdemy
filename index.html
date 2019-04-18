@@ -11,6 +11,8 @@
     <div id="app">
         <h1 v-once>{{ title }}</h1>
         <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
+        <hr>
+        <p v-html='finishedLink'></p>
     </div>
     <script>
         // You may of course also outsource this script code into a separate file (e.g. app.js) and simply import this file here
@@ -18,7 +20,8 @@
             el: '#app',
             data: {
                 title: 'Hello World!',
-                link: 'http://google.com'
+                link: 'http://google.com',
+                finishedLink: '<a href="http://google.com">Google</a>'
             },
             methods: {
                 changeGreeting: function(event) {
